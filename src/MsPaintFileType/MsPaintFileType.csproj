@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>MsPaintFileType</RootNamespace>
+    <AssemblyName>MsPaintFileType</AssemblyName>
+    <UseWindowsForms>false</UseWindowsForms>
+    <UseWPF>false</UseWPF>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MsPaintFile\MsPaintFile.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="PaintDotNet.Base">
+      <HintPath>$(PaintDotNetPath)\PaintDotNet.Base.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="PaintDotNet.Core">
+      <HintPath>$(PaintDotNetPath)\PaintDotNet.Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="PaintDotNet.Data">
+      <HintPath>$(PaintDotNetPath)\PaintDotNet.Data.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="PaintDotNet.Fundamentals">
+      <HintPath>$(PaintDotNetPath)\PaintDotNet.Fundamentals.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="PaintDotNet.PropertySystem">
+      <HintPath>$(PaintDotNetPath)\PaintDotNet.PropertySystem.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="PaintDotNet.Primitives">
+      <HintPath>$(PaintDotNetPath)\PaintDotNet.Primitives.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="PaintDotNet.ComponentModel">
+      <HintPath>$(PaintDotNetPath)\PaintDotNet.ComponentModel.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>

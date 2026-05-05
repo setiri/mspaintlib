@@ -1,0 +1,9 @@
+<Project>
+
+  <PropertyGroup>
+    <PaintDotNetPath Condition="'$(PaintDotNetPath)' == ''">C:\Program Files\paint.net</PaintDotNetPath>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+  </PropertyGroup>
+
+</Project>

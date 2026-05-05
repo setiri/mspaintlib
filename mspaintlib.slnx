@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/MsPaintFile/MsPaintFile.csproj" />
+    <Project Path="src/MsPaintFileType/MsPaintFileType.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/MsPaintFile.Tests/MsPaintFile.Tests.csproj" />
+  </Folder>
+</Solution>

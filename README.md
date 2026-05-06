@@ -59,6 +59,35 @@ stable release. The library pins what it expects and will throw a
 `PaintFormatException` (rather than silently misparse) when it sees
 something it doesn't recognize.
 
+## Note on the canvas background color
+
+MS Paint's `.paint` format stores a canvas background color as a
+document-level property — you can see it behind transparent layer pixels
+in MS Paint, but it isn't a layer and isn't directly editable. Paint.NET
+has no equivalent: its canvas under the bottom layer is always transparent
+(rendered as the standard checkerboard).
+
+Today the plugin handles this by **leaving the background visually
+transparent in Paint.NET**, which is the simplest behavior and avoids
+introducing a fake layer the user might edit. The color itself is **not
+discarded** — the plugin stashes it in Paint.NET's `Document.CustomHeaders`
+on load and reads it back on save, so a full round-trip
+(MS Paint → Paint.NET → MS Paint) preserves the original background color.
+
+Other plausible behaviors:
+
+- Synthesize a non-editable bottom layer filled with the background color,
+  to match what MS Paint shows visually.
+- Synthesize an editable bottom layer (and convert it back to a canvas
+  property on save by detecting "is the bottom layer a solid color?" — a
+  fragile heuristic).
+- Surface the background color as a Paint.NET document property accessible
+  from a custom dialog.
+
+Each has trade-offs around editability, round-trip fragility, and surprise
+factor. If you have a strong preference for one, open an issue and let's
+discuss — happy to revisit if the community lands on a clearer answer.
+
 ## Install — Paint.NET plugin
 
 1. Download a release ZIP (or build from source — see below).
@@ -193,7 +222,7 @@ Issues and pull requests welcome. Useful contributions:
 
 ## License
 
-[MIT](LICENSE) — Copyright © 2026 Brady Moritz.
+[MIT](LICENSE) — Copyright © 2026 [Setiri LLC](https://setiri.com).
 
 This project is independent and unaffiliated with Microsoft or Paint.NET.
 "MS Paint" and "Paint.NET" are trademarks of their respective owners.

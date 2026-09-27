@@ -35,8 +35,8 @@ This project closes that gap. It ships:
   the on-disk layout, property semantics, and the gotchas you'll hit if you
   try to write your own reader.
 
-A longer write-up of the reverse-engineering process will be published at
-[bradymoritz.com](https://bradymoritz.com) and linked here when it goes live.
+A longer write-up of the reverse-engineering process is published at
+[https://bradymoritz.com](https://www.bradymoritz.com/mspaintlib-a-net-library-for-the-new-ms-paint-paint-file-format).
 
 ## Status
 
